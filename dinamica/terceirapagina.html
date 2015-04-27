@@ -11,7 +11,8 @@
 
             $("#Add").click(function() {
 
-                var $li = $("#test").val().toString() + '<li>   <button class="Remove" type="button">Remove</button> </li>';
+                var $li ='<li>'+ $("#test").val() + "   " + '<button class="Remove" type="button">Remover</button> ' +
+                        '<button class="Change" type="button">Já Aprendi!</button> <br><br> </li> ';
                 $("ul").append($li );
 
             });
@@ -20,6 +21,20 @@
                 $(this).closest('li').remove();
 
             });
+
+            $('ol').on('click', '.Remove', function() {
+                $(this).closest('li').remove();
+
+            });
+
+            $('ul').on('click', '.Change', function(){
+                $("ol").append(this.closest('li'));
+                $(this).closest('li').remove;
+                this.remove();
+
+            });
+
+
 
 
 
@@ -44,7 +59,11 @@
             <br><br>
 
         <ul></ul>
-        <p></p>
+
+        <div class="aprendido" align = left>
+            <h3>O que você já aprendeu em SI1:</h3>
+            <ol></ol>
+        </div>
 
 
 
